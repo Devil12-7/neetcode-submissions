@@ -1,0 +1,18 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+        hashMap = defaultdict(list)
+
+        for s in strs:
+            cList = [0] * 26
+            for c in s:
+                cList[ord(c) - ord("a")] += 1
+            hashMap[tuple(cList)].append(s)
+        
+        return list(hashMap.values())
+
+
+
+
+
+        
